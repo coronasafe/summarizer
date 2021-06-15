@@ -10,7 +10,10 @@ const main = async () => {
     team_slug: "cef",
   });
 
-  // Every PR made, grouped by repos.
+  // All members inside the CEF team
+  const students = cefStudents.data.map((student) => student.login);
+
+  // Every PR made by users inside CEF team, grouped by repos.
   const thePRs = await Promise.all(
     repos.map(async (repo) => {
       const { data: allPRs } = await octo.rest.pulls.list({
@@ -20,6 +23,7 @@ const main = async () => {
 
       const todaysPR = allPRs
         .filter((pr) => moment(pr.created_at).isSame(moment(), "date"))
+        .filter((pr) => students.includes(pr.user.login))
         .map((pr) => {
           const title = pr.title;
           const author = pr.user.login;
@@ -32,9 +36,6 @@ const main = async () => {
       return { [repo]: todaysPR };
     })
   );
-
-  // All members inside the CEF team
-  const students = cefStudents.data.map((student) => student.login);
 
   return { thePRs, students };
 };

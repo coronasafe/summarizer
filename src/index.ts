@@ -39,7 +39,38 @@ const main = async () => {
     })
   );
 
-  return { thePRs, students };
+  // Get reviews done by CEF team members for all PRs
+  const theReviews = await Promise.all(
+    repos.map(async (repo) => {
+      const { data: thePRs } = await octo.rest.pulls.list({
+        repo,
+        owner: "coronasafe",
+        state: "open",
+      });
+
+      return await Promise.all(
+        thePRs.map(async (pr) => {
+          const { data: allReviews } = await octo.rest.pulls.listReviews({
+            repo,
+            owner: "coronasafe",
+            pull_number: pr.number,
+          });
+
+          const prTitle = pr.title;
+          const reviewedBy = allReviews
+            .filter((review) =>
+              moment(review.submitted_at).isSame(moment(), "date")
+            )
+            .filter((review) => students.includes(review.user.login))
+            .map((review) => review.user.login);
+
+          return { [repo]: { prTitle, reviewedBy } };
+        })
+      );
+    })
+  );
+
+  return { theReviews, thePRs, students };
 };
 
 main().then(console.log).catch(console.error);

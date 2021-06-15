@@ -1,6 +1,8 @@
+import * as dotenv from "dotenv";
 import * as moment from "moment";
 import * as github from "@actions/github";
 
+dotenv.config();
 const repos = ["care_fe", "care", "life", "dashboard", "citizen", "arike"];
 
 const main = async () => {

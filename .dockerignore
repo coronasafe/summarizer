@@ -1,0 +1,11 @@
+.vscode/
+dist/
+node_modules/
+.env
+.env.example
+.eslintignore
+.eslintrc.js
+.gitignore
+.prettierignore
+.pretterrc.json
+README.md

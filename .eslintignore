@@ -1,3 +1,4 @@
 dist/
 yarn.lock
 README.md
+Dockerfile

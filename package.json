@@ -2,7 +2,9 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint .",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "ts:build": "tsc -p tsconfig.json",
+    "ts:watch": "tsc -w -p tsconfig.json"
   },
   "devDependencies": {
     "@types/node": "^15.12.2",

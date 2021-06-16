@@ -80,9 +80,11 @@ __metadata:
   resolution: "@coronasafe/dasaver@workspace:packages/dasaver"
   dependencies:
     "@coronasafe/dafetch": 1.0.0
+    "@types/write-json-file": ^3.2.1
     dotenv: ^10.0.0
     moment: ^2.29.1
     typescript: ^4.3.2
+    write-json-file: ^4.3.0
   languageName: unknown
   linkType: soft
 
@@ -1177,6 +1179,15 @@ __metadata:
   version: 4.0.0
   resolution: "@types/parse-json@npm:4.0.0"
   checksum: 4a8f720afac47b474d3f2eece312340e72bc31bc9561cda37b596ce2ed218c0099765d302625bb67d659a8452a1f93d514f4863c11c7ebaf65430428687dc426
+  languageName: node
+  linkType: hard
+
+"@types/write-json-file@npm:^3.2.1":
+  version: 3.2.1
+  resolution: "@types/write-json-file@npm:3.2.1"
+  dependencies:
+    write-json-file: "*"
+  checksum: 416c74211ccbdd12e2bb08242e770b3729be13ba930a28d8c793b205ba709dabbc401f89a1cdc7acb7328f9bfd8579ccc8468c2f6eeb15ab6db157a0705fe0df
   languageName: node
   linkType: hard
 
@@ -6753,6 +6764,20 @@ typescript@^4.3.2:
   languageName: node
   linkType: hard
 
+"write-json-file@npm:*, write-json-file@npm:^4.3.0":
+  version: 4.3.0
+  resolution: "write-json-file@npm:4.3.0"
+  dependencies:
+    detect-indent: ^6.0.0
+    graceful-fs: ^4.1.15
+    is-plain-obj: ^2.0.0
+    make-dir: ^3.0.0
+    sort-keys: ^4.0.0
+    write-file-atomic: ^3.0.0
+  checksum: 0803c5856575c648d80b656c32fc0305a31946fcff53f04e2240094025db1ab7c583963418701c3ded336dbfe9bf448fa4639e0741f624a2ae26a5f0096847a7
+  languageName: node
+  linkType: hard
+
 "write-json-file@npm:^3.2.0":
   version: 3.2.0
   resolution: "write-json-file@npm:3.2.0"
@@ -6764,20 +6789,6 @@ typescript@^4.3.2:
     sort-keys: ^2.0.0
     write-file-atomic: ^2.4.2
   checksum: 2a4eb5925cf200c3fa5af5607f85a5eb7d279ef388feedb5d67d1a1d43d1102c17cd3f4ebe2ebcb30123db1c884e88c2a8f689cbcb6b18fbd60a48764c59537b
-  languageName: node
-  linkType: hard
-
-"write-json-file@npm:^4.3.0":
-  version: 4.3.0
-  resolution: "write-json-file@npm:4.3.0"
-  dependencies:
-    detect-indent: ^6.0.0
-    graceful-fs: ^4.1.15
-    is-plain-obj: ^2.0.0
-    make-dir: ^3.0.0
-    sort-keys: ^4.0.0
-    write-file-atomic: ^3.0.0
-  checksum: 0803c5856575c648d80b656c32fc0305a31946fcff53f04e2240094025db1ab7c583963418701c3ded336dbfe9bf448fa4639e0741f624a2ae26a5f0096847a7
   languageName: node
   linkType: hard
 

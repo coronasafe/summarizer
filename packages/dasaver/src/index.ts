@@ -3,7 +3,7 @@ import * as moment from "moment";
 import DAFetch from "@coronasafe/dafetch";
 
 dotenv.config();
-const repos = ["care_fe", "life", "care", "citizen", "arike"];
+const repos = ["care_fe", "life", "dashboard", "care", "citizen", "arike"];
 
 const main = async () => {
   const dafetch = new DAFetch(

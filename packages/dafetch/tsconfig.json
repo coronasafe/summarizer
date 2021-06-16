@@ -1,7 +1,9 @@
 {
   "include": ["src/**/*.ts"],
   "compilerOptions": {
-    "outDir": "dist"
+    "outDir": "dist",
+    "declaration": true,
+    "lib": ["ES2020"]
   },
   "compileOnSave": true
 }

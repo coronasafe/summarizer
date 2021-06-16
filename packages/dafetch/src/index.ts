@@ -25,8 +25,8 @@ class DAFetch implements InterfaceDAFetch {
 
   public async getPullsForRepoBetween(
     repo: string,
-    before: string,
-    after: string
+    before: moment.MomentInput,
+    after: moment.MomentInput
   ): Promise<Pull[]> {
     const { data: allPulls } = await this.octo.rest.pulls.list({
       repo,
@@ -41,14 +41,14 @@ class DAFetch implements InterfaceDAFetch {
         const assignees = pull.assignees.map((user) => user.login);
         const reviewers = pull.requested_reviewers.map((user) => user.login);
 
-        return { title, author, assignees, reviewers };
+        return { repo, title, author, assignees, reviewers };
       });
   }
 
   public async getReviewsForRepo(
     repo: string,
-    before: string,
-    after: string
+    before: moment.MomentInput,
+    after: moment.MomentInput
   ): Promise<Review[]> {
     const { data: thePulls } = await this.octo.rest.pulls.list({
       repo,
@@ -71,7 +71,7 @@ class DAFetch implements InterfaceDAFetch {
           )
           .map((review) => review.user.login);
 
-        return { prTitle, reviewedBy };
+        return { repo, prTitle, reviewedBy };
       })
     );
   }

@@ -8,8 +8,8 @@
     "ts:watch": "tsc -w -p tsconfig.json"
   },
   "devDependencies": {
-    "typescript": "^4.3.2",
-    "@types/node": "^15.12.2"
+    "@types/node": "^15.12.2",
+    "typescript": "^4.3.2"
   },
   "dependencies": {
     "@actions/github": "^5.0.0",

@@ -1,4 +1,5 @@
 export interface Pull {
+  repo: string;
   title: string;
   author: string;
   assignees: string[];
@@ -6,6 +7,7 @@ export interface Pull {
 }
 
 export interface Review {
+  repo: string;
   prTitle: string;
   reviewedBy: string[];
 }
@@ -14,12 +16,12 @@ export interface InterfaceDAFetch {
   getTeamMembers(): Promise<string[]>;
   getPullsForRepoBetween(
     repo: string,
-    before: string,
-    after: string
+    before: moment.MomentInput,
+    after: moment.MomentInput
   ): Promise<Pull[]>;
   getReviewsForRepo(
     repo: string,
-    before: string,
-    after: string
+    before: moment.MomentInput,
+    after: moment.MomentInput
   ): Promise<Review[]>;
 }

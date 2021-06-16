@@ -23,18 +23,14 @@ class DAFetch implements InterfaceDAFetch {
     return teams.data.map((member) => member.login);
   }
 
-  public async getPullsForRepoBetween(
-    repo: string,
-    before: moment.MomentInput,
-    after: moment.MomentInput
-  ): Promise<Pull[]> {
+  public async getPullsForRepoToday(repo: string): Promise<Pull[]> {
     const { data: allPulls } = await this.octo.rest.pulls.list({
       repo,
       owner: this.owner,
     });
 
     return allPulls
-      .filter((pull) => moment(pull.created_at).isBetween(before, after))
+      .filter((pull) => moment(pull.created_at).isSame(moment(), "date"))
       .map((pull) => {
         const title = pull.title;
         const author = pull.user.login;
@@ -45,11 +41,7 @@ class DAFetch implements InterfaceDAFetch {
       });
   }
 
-  public async getReviewsForRepo(
-    repo: string,
-    before: moment.MomentInput,
-    after: moment.MomentInput
-  ): Promise<Review[]> {
+  public async getReviewsForRepoToday(repo: string): Promise<Review[]> {
     const { data: thePulls } = await this.octo.rest.pulls.list({
       repo,
       owner: this.owner,
@@ -67,7 +59,7 @@ class DAFetch implements InterfaceDAFetch {
         const prTitle = pull.title;
         const reviewedBy = allReviews
           .filter((review) =>
-            moment(review.submitted_at).isBetween(before, after)
+            moment(review.submitted_at).isSame(moment(), "date")
           )
           .map((review) => review.user.login);
 

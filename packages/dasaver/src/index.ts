@@ -13,20 +13,10 @@ const main = async () => {
   );
   const members = await dafetch.getTeamMembers();
   const pulls = await Promise.all(
-    repos.map(
-      async (repo) =>
-        await dafetch.getPullsForRepoBetween(
-          repo,
-          moment().subtract(1),
-          moment()
-        )
-    )
+    repos.map(async (repo) => await dafetch.getPullsForRepoToday(repo))
   );
   const reviews = await Promise.all(
-    repos.map(
-      async (repo) =>
-        await dafetch.getReviewsForRepo(repo, moment().subtract(1), moment())
-    )
+    repos.map(async (repo) => await dafetch.getReviewsForRepoToday(repo))
   );
 
   return { members, pulls, reviews };

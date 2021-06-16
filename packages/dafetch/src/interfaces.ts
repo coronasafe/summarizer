@@ -14,14 +14,6 @@ export interface Review {
 
 export interface InterfaceDAFetch {
   getTeamMembers(): Promise<string[]>;
-  getPullsForRepoBetween(
-    repo: string,
-    before: moment.MomentInput,
-    after: moment.MomentInput
-  ): Promise<Pull[]>;
-  getReviewsForRepo(
-    repo: string,
-    before: moment.MomentInput,
-    after: moment.MomentInput
-  ): Promise<Review[]>;
+  getPullsForRepoToday(repo: string): Promise<Pull[]>;
+  getReviewsForRepoToday(repo: string): Promise<Review[]>;
 }

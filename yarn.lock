@@ -80,9 +80,7 @@ __metadata:
   resolution: "@coronasafe/dasaver@workspace:packages/dasaver"
   dependencies:
     "@coronasafe/dafetch": 1.0.0
-    "@types/lowdb": ^1.0.10
     dotenv: ^10.0.0
-    lowdb: ^2.1.0
     moment: ^2.29.1
     typescript: ^4.3.2
   languageName: unknown
@@ -1144,22 +1142,6 @@ __metadata:
   version: 7.0.7
   resolution: "@types/json-schema@npm:7.0.7"
   checksum: b9d2c509fa4e0b82f58e73f5e6ab76c60ff1884ba41bb82f37fb1cece226d4a3e5a62fedf78a43da0005373a6713d9abe61c1e592906402c41c08ad6ab26d52b
-  languageName: node
-  linkType: hard
-
-"@types/lodash@npm:*":
-  version: 4.14.170
-  resolution: "@types/lodash@npm:4.14.170"
-  checksum: 5ecc968649e764e3204435ba5125a3645e5e83963069a26b9307791698bf47ed9c2bd0f97488d9537eb4753d4bae596e5fa6187437a5b04bf47aba78fa553d50
-  languageName: node
-  linkType: hard
-
-"@types/lowdb@npm:^1.0.10":
-  version: 1.0.10
-  resolution: "@types/lowdb@npm:1.0.10"
-  dependencies:
-    "@types/lodash": "*"
-  checksum: fed38d0ec94149adf1ddb434ea2b5e21dc055fcbc7c7b63cdc061bbd871691a3643d7755712a6ee15f2a39a5264c929db1a7548a398560eddb325f2f149ae5d6
   languageName: node
   linkType: hard
 
@@ -4053,15 +4035,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lowdb@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "lowdb@npm:2.1.0"
-  dependencies:
-    steno: ^1.0.0
-  checksum: 169c20e4bee66f21fe8f3d243b0b03efcd9947ea79bdaec6100c9330066db41d8bd7f58d376f2370272c809f51dc2d452d082f2f1b96de2f5b5b443d4d14ef08
-  languageName: node
-  linkType: hard
-
 "lru-cache@npm:^6.0.0":
   version: 6.0.0
   resolution: "lru-cache@npm:6.0.0"
@@ -5982,13 +5955,6 @@ __metadata:
   dependencies:
     minipass: ^3.1.1
   checksum: d45f9a1d5676f8ebd888a3ae469772d75858e4095087217c2361a6b07a6eefd5a85350bb0fed63128b0025fdf242e81813be0979e6cb956a38dbf26295dca09c
-  languageName: node
-  linkType: hard
-
-"steno@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "steno@npm:1.0.0"
-  checksum: 4b11511c475b816c74b157bd45e7b8780773e5cfa483867bbf9655d0be3a3f88c530b2960e7ebc459ba461905fe0b09902b27eac978370816364f90d43e5b30b
   languageName: node
   linkType: hard
 

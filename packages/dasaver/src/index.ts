@@ -9,8 +9,8 @@ const repos = process.env.GITHUB_REPOS.split(",");
 const main = async () => {
   const dafetch = new DAFetch(
     process.env.DISCUSSION_TOKEN,
-    "coronasafe",
-    "cef"
+    process.env.GITHUB_ORG,
+    process.env.GITHUB_TEAM
   );
   const members = await dafetch.getTeamMembers();
   let pulls = await Promise.all(

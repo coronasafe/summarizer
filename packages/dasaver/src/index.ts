@@ -4,7 +4,7 @@ import DAFetch from "@coronasafe/dafetch";
 import * as writeJsonFile from "write-json-file";
 
 dotenv.config();
-const repos = ["care_fe", "life", "dashboard", "care", "citizen", "arike"];
+const repos = process.env.GITHUB_REPOS.split(",");
 
 const main = async () => {
   const dafetch = new DAFetch(

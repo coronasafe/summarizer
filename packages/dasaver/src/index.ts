@@ -32,9 +32,9 @@ const main = async () => {
   );
 
   const date = moment().format("DD-MM-YYYY");
-  const membersJson = date + "/members.json";
-  const reviewsJson = date + "/reviews.json";
-  const pullsJson = date + "/pulls.json";
+  const membersJson = "data/" + date + "/members.json";
+  const reviewsJson = "data/" + date + "/reviews.json";
+  const pullsJson = "data/" + date + "/pulls.json";
 
   await Promise.all([
     writeJsonFile(membersJson, members),

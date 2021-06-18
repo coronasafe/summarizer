@@ -3,6 +3,7 @@ package-lock.json
 dist/
 .env
 yarn-error.log
+data/
 
 # https://yarnpkg.com/advanced/qa#which-files-should-be-gitignored
 **/.yarn/*
